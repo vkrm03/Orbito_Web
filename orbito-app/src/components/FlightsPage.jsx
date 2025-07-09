@@ -288,111 +288,109 @@ const FlightsPage = () => {
                   </div>
                 </div>
               )}
+{/* Passengers */}
+<div className="passenger-field">
+  <label>Passengers</label>
+  <div className="input-icon-wrapper">
+    <button
+      type="button"
+      onClick={() => setShowPassengerDropdown(!showPassengerDropdown)}
+      className="passenger-btn"
+    >
+      {getTotalPassengers()} Passenger{getTotalPassengers() > 1 ? 's' : ''}
+    </button>
+    {showPassengerDropdown && (
+      <div className="passenger-dropdown">
+        <div className="passenger-section">
+          {/* Adults */}
+          <div className="passenger-row">
+            <div className="passenger-info">
+              <div className="passenger-type">Adults</div>
+              <div className="passenger-age">12+ years</div>
+            </div>
+            <div className="passenger-counter">
+              <button
+                type="button"
+                onClick={() => updatePassengerCount('adults', 'decrement')}
+                disabled={passengers.adults <= 1}
+                className="counter-btn"
+              >
+                <FaMinus />
+              </button>
+              <span className="counter-value">{passengers.adults}</span>
+              <button
+                type="button"
+                onClick={() => updatePassengerCount('adults', 'increment')}
+                className="counter-btn"
+              >
+                <FaPlus />
+              </button>
+            </div>
+          </div>
 
-              {/* Passengers */}
-              <div className="passenger-field">
-                <label>Passengers</label>
-                <div className="input-container">
-                  <FaUsers className="field-icon" />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassengerDropdown(!showPassengerDropdown)}
-                    className="passenger-btn"
-                  >
-                    {getTotalPassengers()} Passenger{getTotalPassengers() > 1 ? 's' : ''}
-                  </button>
-                  {showPassengerDropdown && (
-                    <div className="passenger-dropdown">
-                      <div className="passenger-section">
-                        {/* Adults */}
-                        <div className="passenger-row">
-                          <div className="passenger-info">
-                            <div className="passenger-type">Adults</div>
-                            <div className="passenger-age">12+ years</div>
-                          </div>
-                          <div className="passenger-counter">
-                            <button
-                              type="button"
-                              onClick={() => updatePassengerCount('adults', 'decrement')}
-                              disabled={passengers.adults <= 1}
-                              className="counter-btn"
-                            >
-                              <FaMinus />
-                            </button>
-                            <span className="counter-value">{passengers.adults}</span>
-                            <button
-                              type="button"
-                              onClick={() => updatePassengerCount('adults', 'increment')}
-                              className="counter-btn"
-                            >
-                              <FaPlus />
-                            </button>
-                          </div>
-                        </div>
+          {/* Children */}
+          <div className="passenger-row">
+            <div className="passenger-info">
+              <div className="passenger-type">Children</div>
+              <div className="passenger-age">2-11 years</div>
+            </div>
+            <div className="passenger-counter">
+              <button
+                type="button"
+                onClick={() => updatePassengerCount('children', 'decrement')}
+                disabled={passengers.children <= 0}
+                className="counter-btn"
+              >
+                <FaMinus />
+              </button>
+              <span className="counter-value">{passengers.children}</span>
+              <button
+                type="button"
+                onClick={() => updatePassengerCount('children', 'increment')}
+                className="counter-btn"
+              >
+                <FaPlus />
+              </button>
+            </div>
+          </div>
 
-                        {/* Children */}
-                        <div className="passenger-row">
-                          <div className="passenger-info">
-                            <div className="passenger-type">Children</div>
-                            <div className="passenger-age">2-11 years</div>
-                          </div>
-                          <div className="passenger-counter">
-                            <button
-                              type="button"
-                              onClick={() => updatePassengerCount('children', 'decrement')}
-                              disabled={passengers.children <= 0}
-                              className="counter-btn"
-                            >
-                              <FaMinus />
-                            </button>
-                            <span className="counter-value">{passengers.children}</span>
-                            <button
-                              type="button"
-                              onClick={() => updatePassengerCount('children', 'increment')}
-                              className="counter-btn"
-                            >
-                              <FaPlus />
-                            </button>
-                          </div>
-                        </div>
-
-                        {/* Infants */}
-                        <div className="passenger-row">
-                          <div className="passenger-info">
-                            <div className="passenger-type">Infants</div>
-                            <div className="passenger-age">Under 2 years</div>
-                          </div>
-                          <div className="passenger-counter">
-                            <button
-                              type="button"
-                              onClick={() => updatePassengerCount('infants', 'decrement')}
-                              disabled={passengers.infants <= 0}
-                              className="counter-btn"
-                            >
-                              <FaMinus />
-                            </button>
-                            <span className="counter-value">{passengers.infants}</span>
-                            <button
-                              type="button"
-                              onClick={() => updatePassengerCount('infants', 'increment')}
-                              className="counter-btn"
-                            >
-                              <FaPlus />
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => setShowPassengerDropdown(false)}
-                        className="done-btn"
-                      >
-                        Done
-                      </button>
-                    </div>
-                  )}
-                </div>
-              </div>
+          {/* Infants */}
+          <div className="passenger-row">
+            <div className="passenger-info">
+              <div className="passenger-type">Infants</div>
+              <div className="passenger-age">Under 2 years</div>
+            </div>
+            <div className="passenger-counter">
+              <button
+                type="button"
+                onClick={() => updatePassengerCount('infants', 'decrement')}
+                disabled={passengers.infants <= 0}
+                className="counter-btn"
+              >
+                <FaMinus />
+              </button>
+              <span className="counter-value">{passengers.infants}</span>
+              <button
+                type="button"
+                onClick={() => updatePassengerCount('infants', 'increment')}
+                className="counter-btn"
+              >
+                <FaPlus />
+              </button>
+            </div>
+          </div>
+        </div>
+        <button
+          type="button"
+          onClick={() => setShowPassengerDropdown(false)}
+          className="done-btn"
+        >
+          Done
+        </button>
+      </div>
+    )}
+  </div>
+</div>
 
               {/* Flight Class */}
               <div className="class-field">

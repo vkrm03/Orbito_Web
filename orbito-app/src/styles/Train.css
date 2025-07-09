@@ -1,0 +1,713 @@
+/* Train.css */
+
+.trains-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Effects */
+.background-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 70%;
+  animation-delay: 4s;
+}
+
+.floating-train {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  font-size: 120px;
+  color: rgba(255, 255, 255, 0.1);
+  animation: trainMove 10s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes trainMove {
+  0%, 100% { transform: translateX(0px) rotate(0deg); }
+  50% { transform: translateX(-30px) rotate(5deg); }
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  position: relative;
+  z-index: 2;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.tab-container {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 8px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.tab-btn.active {
+  background: white;
+  color: #667eea;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content */
+.main-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Search Section */
+.search-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.search-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.search-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.search-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Trip Type Selector */
+.trip-type-selector {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.trip-type-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.trip-type-option:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+.trip-type-option.active {
+  border-color: #667eea;
+  background: #667eea;
+  color: white;
+}
+
+.trip-type-option input[type="radio"] {
+  display: none;
+}
+
+.trip-type-option span {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Location Fields */
+.location-fields {
+  display: flex;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.location-group {
+  display: flex;
+  align-items: end;
+  gap: 20px;
+  flex: 1;
+}
+
+.location-field {
+  flex: 1;
+  position: relative;
+}
+
+.location-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.field-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 18px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 16px 16px 16px 50px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.input-container input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-container input::placeholder {
+  color: #999;
+}
+
+.swap-btn {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  height: 48px;
+  width: 48px;
+}
+
+.swap-btn:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+  transform: rotate(180deg);
+}
+
+.swap-btn svg {
+  color: #667eea;
+  font-size: 18px;
+}
+
+.search-btn {
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Suggestions Dropdown */
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  margin-top: 4px;
+}
+
+.suggestion-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+}
+
+.suggestion-item:hover {
+  background: #f8f9ff;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.station-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.station-code {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.state {
+  color: #999;
+  font-size: 14px;
+}
+
+/* Date and Passenger Fields */
+.date-passenger-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: end;
+}
+
+.date-field,
+.passenger-field,
+.class-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-field label,
+.passenger-field label,
+.class-field label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.date-field input,
+.class-select {
+  padding: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.date-field input:focus,
+.class-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.passenger-btn {
+  padding: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.passenger-btn:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+/* Passenger Dropdown */
+.passenger-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 4px;
+  padding: 20px;
+}
+
+.passenger-section {
+  margin-bottom: 20px;
+}
+
+.passenger-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.passenger-row:last-child {
+  border-bottom: none;
+}
+
+.passenger-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.passenger-type {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.passenger-age {
+  color: #999;
+  font-size: 14px;
+}
+
+.passenger-counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.counter-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.counter-btn:hover:not(:disabled) {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+.counter-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.counter-value {
+  font-weight: 600;
+  color: #333;
+  min-width: 20px;
+  text-align: center;
+}
+
+.done-btn {
+  width: 100%;
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.done-btn:hover {
+  background: #5a67d8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .trains-page {
+    padding: 0 10px;
+  }
+
+  .floating-train {
+    font-size: 80px;
+    top: 15%;
+    right: 5%;
+  }
+
+  .search-section {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .search-header h1 {
+    font-size: 2rem;
+  }
+
+  .search-header p {
+    font-size: 1rem;
+  }
+
+  .trip-type-selector {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .trip-type-option {
+    padding: 10px 20px;
+  }
+
+  .location-fields {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .location-group {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .swap-btn {
+    align-self: center;
+    order: 1;
+  }
+
+  .search-btn {
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+
+  .date-passenger-fields {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .passenger-dropdown {
+    padding: 16px;
+  }
+
+  .passenger-row {
+    padding: 10px 0;
+  }
+
+  .tab-container {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 20px 10px;
+  }
+
+  .search-section {
+    padding: 16px;
+  }
+
+  .search-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .input-container input {
+    padding: 14px 14px 14px 45px;
+    font-size: 14px;
+  }
+
+  .field-icon {
+    font-size: 16px;
+    left: 14px;
+  }
+
+  .swap-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .search-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .passenger-btn {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .date-field input,
+  .class-select {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .floating-train {
+    font-size: 60px;
+    opacity: 0.05;
+  }
+
+  .shape-1 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .shape-2 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .shape-3 {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Animation for train-specific elements */
+@keyframes trainPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.trains-page .tab-btn.active svg {
+  animation: trainPulse 2s ease-in-out infinite;
+}
+
+/* Train-specific color scheme adjustments */
+.trains-page {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.trains-page .search-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.trains-page .input-container input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.trains-page .trip-type-option.active {
+  border-color: #667eea;
+  background: #667eea;
+}
+
+.trains-page .swap-btn:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+.trains-page .station-code {
+  color: #667eea;
+}
+
+.trains-page .done-btn {
+  background: #667eea;
+}
+
+.trains-page .done-btn:hover {
+  background: #5a67d8;
+}
+
+/* Additional hover effects for train page */
+.trains-page .suggestion-item:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.trains-page .counter-btn:hover:not(:disabled) {
+  border-color: #667eea;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}

@@ -218,9 +218,11 @@
   font-weight: 600;
   color: #2d3748;
 }
-
 .input-container {
   position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .field-icon {
@@ -229,8 +231,10 @@
   top: 50%;
   transform: translateY(-50%);
   color: #a0aec0;
+  font-size: 1rem; /* Consistent icon size */
+  z-index: 2; /* Ensure icon stays above input */
+  pointer-events: none; /* Prevent icon from blocking input clicks */
 }
-
 .location-field input {
   width: 100%;
   padding: 1rem 1rem 1rem 2.5rem;
@@ -363,7 +367,28 @@
   flex: 1;
   min-width: 200px;
 }
+.date-field input[type="date"] {
+  width: 100%;
+  padding: 1rem 1rem 1rem 2.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  box-sizing: border-box;
+  /* Fix for date input calendar icon interference */
+  position: relative;
+}
 
+.date-field input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.date-field .input-container {
+  position: relative;
+}
 .date-field label,
 .passenger-field label,
 .class-field label {
@@ -373,10 +398,9 @@
   color: #2d3748;
 }
 
-.date-field input,
-.class-select {
+.date-field input {
   width: 100%;
-  padding: 1rem 1rem 1rem 2.5rem;
+  padding: 1rem 1rem 1rem 2.75rem; /* Increased left padding */
   border: 2px solid #e2e8f0;
   border-radius: 12px;
   font-size: 1rem;
@@ -399,7 +423,7 @@
 /* Passenger Field */
 .passenger-btn {
   width: 100%;
-  padding: 1rem 1rem 1rem 2.5rem;
+  padding: 1rem 1rem 1rem 2.75rem; /* Increased left padding */
   border: 2px solid #e2e8f0;
   border-radius: 12px;
   font-size: 1rem;
@@ -409,7 +433,6 @@
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
-
 .passenger-btn:hover,
 .passenger-btn:focus {
   outline: none;
@@ -666,9 +689,32 @@
 }
 
 @media (max-width: 480px) {
-  .flights-page {
-    padding-top: 60px;
+  .location-field input,
+  .date-field input,
+  .passenger-btn,
+  .class-select {
+    padding: 0.75rem 0.75rem 0.75rem 2.25rem; /* Adjusted for mobile */
+  } .field-icon {
+    left: 0.75rem;
+    font-size: 0.9rem;
   }
+.class-select {
+  padding-left: 1rem; /* No icon, so normal padding */
+}
+.passenger-field .field-icon {
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+/* Fix for date field icon positioning */
+.date-field .field-icon {
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
   
   .search-section {
     padding: 1.5rem 1rem;
@@ -689,13 +735,16 @@
     font-size: 0.85rem;
   }
   
-  .location-field input,
-  .date-field input,
-  .passenger-btn,
-  .class-select {
-    padding: 0.75rem 0.75rem 0.75rem 2rem;
-  }
-  
+  .location-field input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 2.75rem; /* Increased left padding */
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  box-sizing: border-box;
+}
   .swap-btn {
     width: 2.5rem;
     height: 2.5rem;
