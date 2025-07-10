@@ -320,6 +320,27 @@
   color: #718096;
   font-size: 0.9rem;
 }
+.input-icon-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon-wrapper .icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 1rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Adjust button padding to account for icon */
+.passenger-btn {
+  padding-left: 2.75rem !important;
+}
+
 
 .country {
   color: #a0aec0;
