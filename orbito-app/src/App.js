@@ -5,6 +5,7 @@ import HomePage from './components/Homepage';
 import FlightsPage from '../src/components/FlightsPage';
 import Navbar from '../src/components/Navbar';
 import TrainsPage from '../src/components/Trainpage';
+import BusesPage from '../src/components/BusesPage';
 function App() {
   // Simple routing logic - you can replace this with React Router later
   const currentPath = window.location.pathname;
@@ -15,6 +16,8 @@ function App() {
         return <FlightsPage />;
       case '/trains':
         return <TrainsPage />;
+      case '/buses':
+        return <BusesPage />;
       case '/':
       default:
         return <HomePage />;

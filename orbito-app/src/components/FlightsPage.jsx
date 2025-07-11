@@ -284,7 +284,7 @@ const FlightsPage = () => {
                       value={returnDate}
                       onChange={(e) => setReturnDate(e.target.value)}
                       min={departureDate || getMinDate()}
-                    />
+                    /> 
                   </div>
                 </div>
               )}
