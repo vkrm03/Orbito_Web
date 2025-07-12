@@ -1,5 +1,6 @@
 // FlightsPage.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; 
 import { FaPlaneDeparture, FaTrain, FaBus, FaExchangeAlt, FaCalendarAlt, FaUsers, FaSearch, FaMapMarkerAlt, FaPlane, FaMinus, FaPlus } from 'react-icons/fa';
 import '../styles/Flight.css';
 
