@@ -166,7 +166,7 @@ const BusesPage = () => {
                   checked={tripType === 'round-trip'}
                   onChange={(e) => setTripType(e.target.value)}
                 />
-                <span>Round Trip</span>
+                <span style={{color : "black"}}>Round Trip</span>
               </label>
               <label className={`trip-type-option ${tripType === 'one-way' ? 'active' : ''}`}>
                 <input 
@@ -175,7 +175,7 @@ const BusesPage = () => {
                   checked={tripType === 'one-way'}
                   onChange={(e) => setTripType(e.target.value)}
                 />
-                <span>One Way</span>
+                <span style={{color : "black"}}>One Way</span>
               </label>
             </div>
 
@@ -405,7 +405,7 @@ const BusesPage = () => {
                 <select
                   value={busType}
                   onChange={(e) => setBusType(e.target.value)}
-                  className="bus-type-select"
+                  className="class-select"
                 >
                   <option value="any">Any Bus Type</option>
                   <option value="ac">AC</option>

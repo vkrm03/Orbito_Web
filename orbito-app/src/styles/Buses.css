@@ -1,0 +1,268 @@
+/* Bus.css */
+
+.buses-page {
+  min-height: 80vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Effects */
+.bus-background-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bus-floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.bus-shape-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.bus-shape-2 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.bus-shape-3 {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 70%;
+  animation-delay: 4s;
+}
+
+.bus-floating-icon {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  font-size: 120px;
+  color: rgba(255, 255, 255, 0.1);
+  animation: busMove 10s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes busMove {
+  0%, 100% { transform: translateX(0px) rotate(0deg); }
+  50% { transform: translateX(-30px) rotate(5deg); }
+}
+
+.tab-navigation {
+  position: relative;
+  z-index: 2;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.bus-tab-container {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 8px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bus-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.bus-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.bus-tab-btn.active {
+  background: white;
+  color: #667eea;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.buses-page .search-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.buses-page .search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(14, 46, 206, 0.4);
+}
+
+.buses-page .input-container input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.1);
+}
+
+.buses-page .trip-type-option.active {
+  border-color: #667eea;
+  background: #667eea;
+}
+
+.buses-page .swap-btn:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+.buses-page .station-code {
+  color: #667eea;
+}
+
+.buses-page .done-btn {
+  background: #667eea;
+}
+
+.buses-page .done-btn:hover {
+  background: #667eea;
+}
+
+.buses-page .suggestion-item:hover {
+  background: linear-gradient(135deg, rgba(255, 126, 95, 0.1) 0%, rgba(254, 180, 123, 0.1) 100%);
+}
+
+.buses-page .counter-btn:hover:not(:disabled) {
+  border-color: #667eea;
+  background: linear-gradient(135deg, rgba(255, 126, 95, 0.1) 0%, rgba(254, 180, 123, 0.1) 100%);
+}
+
+.buses-page .bus-tab-btn.active svg {
+  animation: busPulse 2s ease-in-out infinite;
+}
+
+@keyframes busPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+
+
+.bus-type-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.bus-type-field label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.bus-type-select {
+  padding: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.bus-type-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.1);
+}
+
+@media (max-width: 480px) {
+  .bus-type-select {
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+.buses-page .tab-navigation {
+  margin-top: 80px;
+}
+
+/* Responsive Styling - Same structure as Train.css but with .buses-page selectors */
+@media (max-width: 768px) {
+  .buses-page {
+    padding: 0 10px;
+  }
+
+  .bus-floating-icon {
+    font-size: 80px;
+    top: 15%;
+    right: 5%;
+  }
+
+  .bus-tab-container {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .bus-tab-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bus-main-content {
+    padding: 20px 10px;
+  }
+
+  .bus-floating-icon {
+    font-size: 60px;
+    opacity: 0.05;
+  }
+
+  .bus-shape-1 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bus-shape-2 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .bus-shape-3 {
+    width: 80px;
+    height: 80px;
+  }
+}

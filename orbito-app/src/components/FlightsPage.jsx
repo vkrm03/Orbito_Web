@@ -161,7 +161,7 @@ const FlightsPage = () => {
                   checked={tripType === 'round-trip'}
                   onChange={(e) => setTripType(e.target.value)}
                 />
-                <span>Round Trip</span>
+                <span style={{color : "black"}}>Round Trip</span>
               </label>
               <label className={`trip-type-option ${tripType === 'one-way' ? 'active' : ''}`}>
                 <input 
@@ -170,7 +170,7 @@ const FlightsPage = () => {
                   checked={tripType === 'one-way'}
                   onChange={(e) => setTripType(e.target.value)}
                 />
-                <span>One Way</span>
+                <span style={{color : "black"}}>One Way</span>
               </label>
             </div>
 
