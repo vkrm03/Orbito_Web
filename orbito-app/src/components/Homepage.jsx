@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaPlaneDeparture, FaCar, FaHotel, FaUser, FaSignInAlt, FaFacebook, FaInstagram, FaTwitter, FaSearch, FaMapMarkerAlt, FaCalendarAlt, FaUsers } from 'react-icons/fa';
+import { FaPlaneDeparture, FaCar,FaTrain, FaHotel, FaUser, FaSignInAlt, FaFacebook, FaInstagram, FaTwitter, FaSearch, FaMapMarkerAlt, FaCalendarAlt, FaUsers } from 'react-icons/fa';
 import '../styles/Homepage.css';
 export default function HomePage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -167,7 +167,7 @@ export default function HomePage() {
                   <span>Flights</span>
                 </a>
                 <a href="/trains" className="dropdown-item">
-                  <FaPlaneDeparture />
+                  <FaTrain />
                   <span>Trains</span>
                 </a>
                 <a href="/buses" className="dropdown-item">
