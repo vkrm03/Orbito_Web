@@ -6,6 +6,8 @@ import FlightsPage from '../src/components/FlightsPage';
 import Navbar from '../src/components/Navbar';
 import TrainsPage from '../src/components/Trainpage';
 import BusesPage from '../src/components/BusesPage';
+import Login from '../src/components/Login';
+import Register from '../src/components/Register';
 function App() {
   // Simple routing logic - you can replace this with React Router later
   const currentPath = window.location.pathname;
@@ -18,6 +20,10 @@ function App() {
         return <TrainsPage />;
       case '/buses':
         return <BusesPage />;
+      case '/login':
+        return <Login />;
+      case '/register':
+        return <Register />;
       case '/':
       default:
         return <HomePage />;
